@@ -1,0 +1,1 @@
+Select cust_id,date,abs(datediff(month, date,min(date)) over (partition by cust_id)) as month_diff from customer;
