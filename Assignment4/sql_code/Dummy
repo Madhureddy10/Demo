@@ -1,1 +1,5 @@
-
+SELECT DISTINCT s1.prod_id,
+FROM Sales s1
+LEFT JOIN Sales s2 ON s1.prod_id = s2.prod_id
+AND s2.sales_date = DATE_ADD(s1.sales_date, INTERVAL 7 DAY) LEFT JOIN Sales s3 ON s1.prod_id = s3.prod_id
+AND s3.sales_date = DATE_ADD(s1.sales_date, INTERVAL 14 DAY) WHERE s2.prod_id IS NULL AND s3.prod_id IS NULL;
